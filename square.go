@@ -9,10 +9,14 @@ type Square struct {
 	a     uint
 }
 
+func NewSquare(x, y int, a uint) Square {
+	return Square{Point{x, y}, a}
+}
+
 func (s Square) End() Point {
 	return Point{
 		x: s.start.x + int(s.a),
-		y: s.start.y - int(s.a),
+		y: s.start.y + int(s.a),
 	}
 }
 
